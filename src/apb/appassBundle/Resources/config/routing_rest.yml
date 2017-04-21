@@ -1,0 +1,4 @@
+users : 
+  type: rest
+  resource:     "apbappassBundle:UserRest"
+  name_prefix:  api_

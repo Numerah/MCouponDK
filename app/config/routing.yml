@@ -1,0 +1,18 @@
+eo_passbook_sample:
+    resource: "@EoPassbookBundle/Resources/config/routing/sample.xml"
+
+_cogilent_passbook:
+    resource: "@CogilentPassbookBundle/Resources/config/routing.yml"
+
+_cogilent_rest_api:
+    resource: "@CogilentPassbookBundle/Resources/config/routing_rest.yml"
+
+fos_oauth_server_token:
+    resource: "@FOSOAuthServerBundle/Resources/config/routing/token.xml"
+
+fos_oauth_server_authorize:
+    resource: "@FOSOAuthServerBundle/Resources/config/routing/authorize.xml"
+
+_apb_passbook:
+    resource: "@apbappassBundle/Resources/config/routing.yml"
+

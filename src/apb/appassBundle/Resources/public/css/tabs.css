@@ -1,0 +1,7 @@
+.ui-tabs-nav li.ui-tabs-selected a  { cursor: pointer; } /* first selector in group seems obsolete, but required to overcome bug in Opera applying cursor: text overall if defined elsewhere... */
+.ui-tabs .ui-tabs-panel 			{ padding: 20px; display: block; border-width: 0; background: none;
+									   position: relative; min-height: 200px; }
+a.mover 							{ background: #111; padding: 6px 12px; position: absolute;
+								      color: white; font-weight: bold; text-decoration: none; }
+.next-tab 							{ top: 0; right: 0; -moz-border-radius-bottomleft: 10px; -webkit-border-bottom-left-radius: 10px; }
+.prev-tab 							{ top: 0; left: 0; -moz-border-radius-bottomright: 10px; -webkit-border-bottom-right-radius: 10px; }

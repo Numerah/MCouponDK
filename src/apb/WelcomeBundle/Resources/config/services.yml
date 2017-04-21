@@ -1,0 +1,7 @@
+parameters:
+#    apb_welcome.example.class: apb\WelcomeBundle\Example
+
+services:
+#    apb_welcome.example:
+#        class: %apb_welcome.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

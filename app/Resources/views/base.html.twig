@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>{% block title %}mcoupons{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="stylesheet" href="{{ asset('bundles/apbappass/ui/themes/smoothness/jquery-ui.css') }}">
+        <script src="{{ asset('bundles/apbappass/js/jquery-1.3.2.min.js') }}"></script>
+        <script src="{{ asset('bundles/apbappass/js/jquery-ui-1.7.custom.min.js') }}"></script>
+        <script src="{{ asset('bundles/apbappass/js/jquery-1.9.1.js') }}"></script>
+        <script src="{{ asset('bundles/apbappass/ui/jquery-ui.js') }}"></script>
+        <script src="{{ asset('bundles/apbappass/jquery-minicolors-master/jquery.minicolors.js') }}"></script>
+        <link rel="stylesheet" href="{{ asset('bundles/apbappass/jquery-minicolors-master/jquery.minicolors.css') }}">
+        <link rel="stylesheet" href="{{ asset('bundles/apbappass/css/bootstrap.no-icons.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('bundles/apbappass/css/font-awesome.css')}}">
+        <link rel="stylesheet" href="{{ asset('bundles/apbappass/css/tabs.css')}}">
+        <link rel="stylesheet" media="screen" type="text/css" href="{{ asset('bundles/apbappass/css/colpick.css') }}" />
+        <link href="{{ asset('bundles/apbappass/css/file-uploads.css') }}" media="all" rel="stylesheet" type="text/css" />
+        <script src="{{ asset('bundles/apbappass/js/file-uploads.js') }}"></script>
+        <script src="{{ asset('bundles/apbappass/js/functionality.js') }}"></script>
+        <script src="{{ asset('bundles/apbappass/js/editfunctionality.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('bundles/apbappass/js/colpick.js') }}"></script>
+        <script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+        <script src="{{ asset('bundles/apbappass/js/jquery.geocomplete.js') }}"></script>
+    <style>
+        .file-caption-name {
+            font-size: 0.7em;
+        }
+    </style>
+    <script>
+        $(function() {
+
+            $("#apb_appassbundle_mappearance_eventTicketStatus").change(function() {
+                if($(this).val() == 'Layout 1: Strip'){
+                    $("#image4").show();
+                    $("#image5").hide();
+                    $("#image6").hide();
+                }
+                else if($(this).val() == 'Layout 2: Background/Thumbnail'){
+                    $("#image4").hide();
+                    $("#image5").show();
+                    $("#image6").show();
+                }
+                else{
+                    $("#image4").hide();
+                    $("#image5").show();
+                    $("#image6").show();
+                }
+            });
+            $(document).ready(function (){
+                if ($("#apb_appassbundle_mgeneral_categoryName").val() == "Boarding Pass") {
+
+                    $("#image0").hide();
+                    $("#image1").show();
+                    $("#image2").hide();
+                    $("#image3").hide();
+                    $("#image4").hide();
+                    $("#image5").hide();
+                    $("#image6").hide();
+
+                }
+                else if ($("#apb_appassbundle_mgeneral_categoryName").val() == "Generic") {
+
+                    $("#image0").show();
+                    $("#image1").hide();
+                    $("#image2").hide();
+                    $("#image3").hide();
+                    $("#image4").hide();
+                    $("#image5").hide();
+                    $("#image6").hide();
+                }
+                else if ($("#apb_appassbundle_mgeneral_categoryName").val() == "Coupon") {
+
+                    $("#image0").hide();
+                    $("#image1").hide();
+                    $("#image2").show();
+                    $("#image3").hide();
+                    $("#image4").hide();
+                    $("#image5").hide();
+                    $("#image6").hide();
+
+                }
+                else if ($("#apb_appassbundle_mgeneral_categoryName").val() == "Event Ticket") {
+
+                    $("#image0").hide();
+                    $("#image1").hide();
+                    $("#image2").hide();
+                    $("#image3").hide();
+                    if($("#apb_appassbundle_mappearance_eventTicketStatus").val() == 'Layout 1: Strip'){
+                        $("#image4").show();
+                        $("#image5").hide();
+                        $("#image6").hide();
+                    }
+                    else if($("#apb_appassbundle_mappearance_eventTicketStatus").val() == 'Layout 2: Background/Thumbnail'){
+                        $("#image4").hide();
+                        $("#image5").show();
+                        $("#image6").show();
+                    }
+                    else{
+                        $("#image4").hide();
+                        $("#image5").show();
+                        $("#image6").show();
+                    }
+                }
+                else if ($("#apb_appassbundle_mgeneral_categoryName").val() == "Store Card") {
+
+                    $("#image0").hide();
+                    $("#image1").hide();
+                    $("#image2").hide();
+                    $("#image3").show();
+                    $("#image4").hide();
+                    $("#image5").hide();
+                    $("#image6").hide();
+                }
+                else{ //
+                }
+            });
+            $("#apb_appassbundle_mappearance_eventTicketStatus").change(function() {
+                if($(this).val() == 'Layout 1: Strip'){
+                    $("#image4").show();
+                    $("#image5").hide();
+                    $("#image6").hide();
+                }
+                else if($(this).val() == 'Layout 2: Background/Thumbnail'){
+                    $("#image4").hide();
+                    $("#image5").show();
+                    $("#image6").show();
+                }
+                else{
+                    $("#image4").hide();
+                    $("#image5").show();
+                    $("#image6").show();
+                }
+            });
+            $("#apb_appassbundle_mgeneral_categoryName").change(function() {
+                if ($(this).val() == "Boarding Pass") {
+
+                    $("#image0").hide();
+                    $("#image1").show();
+                    $("#image2").hide();
+                    $("#image3").hide();
+                    $("#image4").hide();
+                    $("#image5").hide();
+                    $("#image6").hide();
+
+                }
+                else if ($(this).val() == "Generic") {
+
+                    $("#image0").show();
+                    $("#image1").hide();
+                    $("#image2").hide();
+                    $("#image3").hide();
+                    $("#image4").hide();
+                    $("#image5").hide();
+                    $("#image6").hide();
+                }
+                else if ($(this).val() == "Coupon") {
+
+                    $("#image0").hide();
+                    $("#image1").hide();
+                    $("#image2").show();
+                    $("#image3").hide();
+                    $("#image4").hide();
+                    $("#image5").hide();
+                    $("#image6").hide();
+
+                }
+                else if ($(this).val() == "Event Ticket") {
+
+                    $("#image0").hide();
+                    $("#image1").hide();
+                    $("#image2").hide();
+                    $("#image3").hide();
+                    $("#image4").show();
+                    $("#image5").hide();
+                    $("#image6").hide();
+                }
+                else if ($(this).val() == "Store Card") {
+
+                    $("#image0").hide();
+                    $("#image1").hide();
+                    $("#image2").hide();
+                    $("#image3").show();
+                    $("#image4").hide();
+                    $("#image5").hide();
+                    $("#image6").hide();
+                }
+                else{ //
+                }
+            });
+        });
+    </script>
+
+    </head>
+    <body>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <a class="brand" href="#">&nbsp;&nbsp;&nbsp;&nbsp; mcoupons !!</a>
+            {{ knp_menu_render('apbappassBundle:MenuBuilder:mainMenu', {'currentClass': 'active', 'template': 'apbappassBundle:Menu:knp_menu.html.twig'}) }}
+            {{ knp_menu_render('apbappassBundle:MenuBuilder:userMenu', {'currentClass': 'active', 'template': 'apbappassBundle:Menu:knp_menu.html.twig'}) }}
+        </div>
+    </div>
+    {% block javascripts %}{% endblock %}
+        {% block body %}{% endblock %}
+
+    </body>
+</html>

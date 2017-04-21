@@ -1,0 +1,52 @@
+apbappass_homepage:
+    pattern:  /hello/{name}
+    defaults: { _controller: apbappassBundle:Default:index }
+apb_appass_new:
+    pattern:  /pass/new/
+    defaults: { _controller: apbappassBundle:Default:new }
+apb_appass_setstatus:
+    pattern: /pass/{ids}/setstatus/{check}
+    defaults: { _controller: apbappassBundle:Default:setStatus }
+apb_appass_test:
+    pattern:  /create/{id}
+    defaults: { _controller: apbappassBundle:Default:generatePass }
+apb_appass_manage:
+    pattern:  /
+    defaults: { _controller: apbappassBundle:Default:manage }
+apb_appass_datamanage:
+    pattern:  /data/management
+    defaults: { _controller: apbappassBundle:Default:dataManagement }
+apb_appass_manageupdate:
+    pattern:  /manage/update/{id}
+    defaults: { _controller: apbappassBundle:Default:manageUpdate }
+apb_appass_datastats:
+    pattern:  /data/statistics
+    defaults: { _controller: apbappassBundle:Default:dataStatistics }
+apb_appass_dynamicmanage:
+    pattern:  /dynamic/management
+    defaults: { _controller: apbappassBundle:Default:dynamicManagement }
+apb_appass_edit:
+    pattern:  /pass/{id}/edit/
+    defaults: { _controller: apbappassBundle:Default:edit }
+apb_appass_replicate:
+    pattern:  /pass/{id}/replicate/
+    defaults: { _controller: apbappassBundle:Default:replicate }
+apb_appass_profile:
+    pattern:  /profile/
+    defaults: { _controller: apbappassBundle:Default:profile }
+
+apb_appass_apientry:
+    pattern:  /apientry/
+    defaults: { _controller: apbappassBundle:Default:apientry }
+
+apb_appass_apidetails:
+    pattern:  /api/details/
+    defaults: { _controller: apbappassBundle:UserRest:apiDetails }
+
+apb_appass_register:
+    path:     /register/
+    defaults: { _controller: apbappassBundle:Account:register }
+
+apb_appass_create:
+    path:     /register/create/
+    defaults: { _controller: apbappassBundle:Account:create }

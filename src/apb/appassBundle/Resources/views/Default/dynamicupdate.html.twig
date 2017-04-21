@@ -1,0 +1,391 @@
+{% extends '::base.html.twig' %}
+{% block title %}mcoupon Form{% endblock %}
+{% block body %}
+
+
+    <div class="content" style="margin-top: 60px;" xmlns="http://www.w3.org/1999/html"
+         xmlns="http://www.w3.org/1999/html">
+
+      <form id="myform" action="" method="POST"
+            {{ form_enctype(form) }}>
+          <table>
+              <tr>
+                  <td style='padding:5px 100px 5px 50px'>
+                      <table class="table table-striped">
+                          <tr></tr>
+                          <tr>
+                              <td colspan="2" style='padding:5px 100px 5px 50px'>
+                                  <br><h4>Barcode Fields</h4>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td style='padding:0px 50px 0px 50px' >
+                                  <label for="{{ form.couponBarcodeDynamicValue.vars.id}}">Barcode Value</label><br>
+                                  {{ form_widget(form.couponBarcodeDynamicValue) }}
+                              </td>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponBarcodeAlternateDynamicText.vars.id}}">Barcode Text</label><br>
+                                  {{ form_widget(form.couponBarcodeAlternateDynamicText) }}
+                              </td>
+                          </tr>
+                      </table>
+                      <table class="table table-striped">
+                          <tr></tr>
+                          <tr>
+                              <td colspan="2" style='padding:5px 100px 5px 50px'>
+                                  <br><h4>Header Fields</h4>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponHeaderLabelDynamic.vars.id}}">Label</label><br>
+                                  {{ form_widget(form.couponHeaderLabelDynamic) }}
+                              </td>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponHeaderTextDynamic.vars.id}}">Value-Text</label><br>
+                                  {{ form_widget(form.couponHeaderTextDynamic) }}
+                              </td>
+                          </tr>
+                      </table>
+                      <table class="table table-striped">
+                          <tr></tr>
+                          <tr>
+                              <td colspan="2" style='padding:5px 100px 5px 50px'>
+                                  <br><h4>Primary Fields</h4>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponPrimaryFieldLabelDynamic.vars.id}}">Lable</label><br>
+                                  {{ form_widget(form.couponPrimaryFieldLabelDynamic) }}
+                              </td>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponPrimaryFieldTextDynamic.vars.id}}">Value-Text</label><br>
+                                  {{ form_widget(form.couponPrimaryFieldTextDynamic) }}
+                              </td>
+                          </tr>
+                      </table>
+                      <table class="table table-striped">
+                          <tr></tr>
+                          <tr>
+                              <td colspan="2" style='padding:5px 100px 5px 50px'>
+                                  <br><h4>Secondary Fields</h4>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponSecondaryFieldLabelDynamicOne.vars.id}}">Lable</label><br>
+                                  {{ form_widget(form.couponSecondaryFieldLabelDynamicOne) }}
+                              </td>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponSecondaryFieldTextDynamicOne.vars.id}}">Value-Text</label><br>
+                                  {{ form_widget(form.couponSecondaryFieldTextDynamicOne) }}
+                              </td>
+                          </tr>
+                          <tr>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponSecondaryFieldLabelDynamicTwo.vars.id}}">Lable</label><br>
+                                  {{ form_widget(form.couponSecondaryFieldLabelDynamicTwo) }}
+                              </td>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponSecondaryFieldTextDynamicTwo.vars.id}}">Value-Text</label><br>
+                                  {{ form_widget(form.couponSecondaryFieldTextDynamicTwo) }}
+                              </td>
+                          </tr>
+                          <tr>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponSecondaryFieldLabelDynamicThree.vars.id}}">Lable</label><br>
+                                  {{ form_widget(form.couponSecondaryFieldLabelDynamicThree) }}
+                              </td>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponSecondaryFieldTextDynamicThree.vars.id}}">Value-Text</label><br>
+                                  {{ form_widget(form.couponSecondaryFieldTextDynamicThree) }}
+                              </td>
+                          </tr>
+                          <tr>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponSecondaryFieldLabelDynamicFour.vars.id}}">Lable</label><br>
+                                  {{ form_widget(form.couponSecondaryFieldLabelDynamicFour) }}
+                              </td>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponSecondaryFieldTextDynamicFour.vars.id}}">Value-Text</label><br>
+                                  {{ form_widget(form.couponSecondaryFieldTextDynamicFour) }}
+                              </td>
+                          </tr>
+                      </table>
+                      <table class="table table-striped">
+                          <tr></tr>
+                          <tr>
+                              <td colspan="2" style='padding:5px 100px 5px 50px'>
+                                  <br><h4>Auxiliary Fields</h4>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponAuxiliaryFieldLabelDynamicOne.vars.id}}">Lable</label><br>
+                                  {{ form_widget(form.couponAuxiliaryFieldLabelDynamicOne) }}
+                              </td>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponAuxiliaryFieldTextDynamicOne.vars.id}}">Value-Text</label><br>
+                                  {{ form_widget(form.couponAuxiliaryFieldTextDynamicOne) }}
+                              </td>
+                          </tr>
+                          <tr>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponAuxiliaryFieldLabelDynamicTwo.vars.id}}">Lable</label><br>
+                                  {{ form_widget(form.couponAuxiliaryFieldLabelDynamicTwo) }}
+                              </td>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponAuxiliaryFieldTextDynamicTwo.vars.id}}">Value-Text</label><br>
+                                  {{ form_widget(form.couponAuxiliaryFieldTextDynamicTwo) }}
+                              </td>
+                          </tr>
+                          <tr>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponAuxiliaryFieldLabelDynamicThree.vars.id}}">Lable</label><br>
+                                  {{ form_widget(form.couponAuxiliaryFieldLabelDynamicThree) }}
+                              </td>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponAuxiliaryFieldTextDynamicThree.vars.id}}">Value-Text</label><br>
+                                  {{ form_widget(form.couponAuxiliaryFieldTextDynamicThree) }}
+                              </td>
+                          </tr>
+                          <tr>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponAuxiliaryFieldLabelDynamicFour.vars.id}}">Lable</label><br>
+                                  {{ form_widget(form.couponAuxiliaryFieldLabelDynamicFour) }}
+                              </td>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponAuxiliaryFieldTextDynamicFour.vars.id}}">Value-Text</label><br>
+                                  {{ form_widget(form.couponAuxiliaryFieldTextDynamicFour) }}
+                              </td>
+                          </tr>
+                      </table>
+                      <table class="table table-striped">
+                          <tr></tr>
+                          <tr>
+                              <td colspan="2" style='padding:5px 100px 5px 50px'>
+                                  <br><h4>Back Fields</h4>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponBackFieldLabelDynamicOne.vars.id}}">Lable</label><br>
+                                  {{ form_widget(form.couponBackFieldLabelDynamicOne) }}
+                              </td>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponBackFieldTextDynamicOne.vars.id}}">Value-Text</label><br>
+                                  {{ form_widget(form.couponBackFieldTextDynamicOne) }}
+                              </td>
+                          </tr>
+                          <tr>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponBackFieldLabelDynamicTwo.vars.id}}">Lable</label><br>
+                                  {{ form_widget(form.couponBackFieldLabelDynamicTwo) }}
+                              </td>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponBackFieldTextDynamicTwo.vars.id}}">Value-Text</label><br>
+                                  {{ form_widget(form.couponBackFieldTextDynamicTwo) }}
+                              </td>
+                          </tr>
+                          <tr>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponBackFieldLabelDynamicThree.vars.id}}">Lable</label><br>
+                                  {{ form_widget(form.couponBackFieldLabelDynamicThree) }}
+                              </td>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponBackFieldTextDynamicThree.vars.id}}">Value-Text</label><br>
+                                  {{ form_widget(form.couponBackFieldTextDynamicThree) }}
+                              </td>
+                          </tr>
+                          <tr>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponBackFieldLabelDynamicFour.vars.id}}">Lable</label><br>
+                                  {{ form_widget(form.couponBackFieldLabelDynamicFour) }}
+                              </td>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponBackFieldTextDynamicFour.vars.id}}">Value-Text</label><br>
+                                  {{ form_widget(form.couponBackFieldTextDynamicFour) }}
+                              </td>
+                          </tr>
+                          <tr>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponBackFieldLabelDynamicFive.vars.id}}">Lable</label><br>
+                                  {{ form_widget(form.couponBackFieldLabelDynamicFive) }}
+                              </td>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponBackFieldTextDynamicFive.vars.id}}">Value-Text</label><br>
+                                  {{ form_widget(form.couponBackFieldTextDynamicFive) }}
+                              </td>
+                          </tr>
+                          <tr>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponBackFieldLabelDynamicSix.vars.id}}">Lable</label><br>
+                                  {{ form_widget(form.couponBackFieldLabelDynamicSix) }}
+                              </td>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponBackFieldTextDynamicSix.vars.id}}">Value-Text</label><br>
+                                  {{ form_widget(form.couponBackFieldTextDynamicSix) }}
+                              </td>
+                          </tr>
+                          <tr>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponBackFieldLabelDynamicSeven.vars.id}}">Lable</label><br>
+                                  {{ form_widget(form.couponBackFieldLabelDynamicSeven) }}
+                              </td>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponBackFieldTextDynamicSeven.vars.id}}">Value-Text</label><br>
+                                  {{ form_widget(form.couponBackFieldTextDynamicSeven) }}
+                              </td>
+                          </tr>
+                          <tr>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponBackFieldLabelDynamicEight.vars.id}}">Lable</label><br>
+                                  {{ form_widget(form.couponBackFieldLabelDynamicEight) }}
+                              </td>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponBackFieldTextDynamicEight.vars.id}}">Value-Text</label><br>
+                                  {{ form_widget(form.couponBackFieldTextDynamicEight) }}
+                              </td>
+                          </tr>
+                          <tr>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponBackFieldLabelDynamicNine.vars.id}}">Lable</label><br>
+                                  {{ form_widget(form.couponBackFieldLabelDynamicNine) }}
+                              </td>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponBackFieldTextDynamicNine.vars.id}}">Value-Text</label><br>
+                                  {{ form_widget(form.couponBackFieldTextDynamicNine) }}
+                              </td>
+                          </tr>
+                          <tr>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponBackFieldLabelDynamicTen.vars.id}}">Lable</label><br>
+                                  {{ form_widget(form.couponBackFieldLabelDynamicTen) }}
+                              </td>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponBackFieldTextDynamicTen.vars.id}}">Value-Text</label><br>
+                                  {{ form_widget(form.couponBackFieldTextDynamicTen) }}
+                              </td>
+                          </tr>
+                      </table>
+                      <table class="table table-striped">
+                          <tr></tr>
+                          <tr>
+                              <td colspan="2" style='padding:5px 100px 5px 50px'>
+                                  <br><h4>Relevance Locations</h4>
+                              </td>
+                          </tr>
+                          <tr>
+                              <td style='padding:0px 50px 0px 50px' >
+                                  <label for="{{ form.couponRelevanceLocationAddressOne.vars.id}}">Relevance Location</label><br>
+                                  {{ form_widget(form.couponRelevanceLocationAddressOne) }}
+                              </td>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponRelevanceLocationTextDynamicOne.vars.id}}">Relevance Text</label><br>
+                                  {{ form_widget(form.couponRelevanceLocationTextDynamicOne) }}
+                              </td>
+                          </tr>
+                          <tr>
+                              <td style='padding:0px 50px 0px 50px' >
+                                  <label for="{{ form.couponRelevanceLocationAddressTwo.vars.id}}">Relevance Location</label><br>
+                                  {{ form_widget(form.couponRelevanceLocationAddressTwo) }}
+                              </td>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponRelevanceLocationTextDynamicTwo.vars.id}}">Relevance Text</label><br>
+                                  {{ form_widget(form.couponRelevanceLocationTextDynamicTwo) }}
+                              </td>
+                          </tr>
+                          <tr>
+                              <td style='padding:0px 50px 0px 50px' >
+                                  <label for="{{ form.couponRelevanceLocationAddressThree.vars.id}}">Relevance Location</label><br>
+                                  {{ form_widget(form.couponRelevanceLocationAddressThree) }}
+                              </td>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponRelevanceLocationTextDynamicThree.vars.id}}">Relevance Text</label><br>
+                                  {{ form_widget(form.couponRelevanceLocationTextDynamicThree) }}
+                              </td>
+                          </tr>
+                          <tr>
+                              <td style='padding:0px 50px 0px 50px' >
+                                  <label for="{{ form.couponRelevanceLocationAddressFour.vars.id}}">Relevance Location</label><br>
+                                  {{ form_widget(form.couponRelevanceLocationAddressFour) }}
+                              </td>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponRelevanceLocationTextDynamicFour.vars.id}}">Relevance Text</label><br>
+                                  {{ form_widget(form.couponRelevanceLocationTextDynamicFour) }}
+                              </td>
+                          </tr>
+                          <tr>
+                              <td style='padding:0px 50px 0px 50px' >
+                                  <label for="{{ form.couponRelevanceLocationAddressFive.vars.id}}">Relevance Location</label><br>
+                                  {{ form_widget(form.couponRelevanceLocationAddressFive) }}
+                              </td>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponRelevanceLocationTextDynamicFive.vars.id}}">Relevance Text</label><br>
+                                  {{ form_widget(form.couponRelevanceLocationTextDynamicFive) }}
+                              </td>
+                          </tr>
+                          <tr>
+                              <td style='padding:0px 50px 0px 50px' >
+                                  <label for="{{ form.couponRelevanceLocationAddressSix.vars.id}}">Relevance Location</label><br>
+                                  {{ form_widget(form.couponRelevanceLocationAddressSix) }}
+                              </td>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponRelevanceLocationTextDynamicSix.vars.id}}">Relevance Text</label><br>
+                                  {{ form_widget(form.couponRelevanceLocationTextDynamicSix) }}
+                              </td>
+                          </tr>
+                          <tr>
+                              <td style='padding:0px 50px 0px 50px' >
+                                  <label for="{{ form.couponRelevanceLocationAddressSeven.vars.id}}">Relevance Location</label><br>
+                                  {{ form_widget(form.couponRelevanceLocationAddressSeven) }}
+                              </td>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponRelevanceLocationTextDynamicSeven.vars.id}}">Relevance Text</label><br>
+                                  {{ form_widget(form.couponRelevanceLocationTextDynamicSeven) }}
+                              </td>
+                          </tr>
+                          <tr>
+                              <td style='padding:0px 50px 0px 50px' >
+                                  <label for="{{ form.couponRelevanceLocationAddressEight.vars.id}}">Relevance Location</label><br>
+                                  {{ form_widget(form.couponRelevanceLocationAddressEight) }}
+                              </td>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponRelevanceLocationTextDynamicEight.vars.id}}">Relevance Text</label><br>
+                                  {{ form_widget(form.couponRelevanceLocationTextDynamicEight) }}
+                              </td>
+                          </tr>
+                          <tr>
+                              <td style='padding:0px 50px 0px 50px' >
+                                  <label for="{{ form.couponRelevanceLocationAddressNine.vars.id}}">Relevance Location</label><br>
+                                  {{ form_widget(form.couponRelevanceLocationAddressNine) }}
+                              </td>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponRelevanceLocationTextDynamicNine.vars.id}}">Relevance Text</label><br>
+                                  {{ form_widget(form.couponRelevanceLocationTextDynamicNine) }}
+                              </td>
+                          </tr>
+                          <tr>
+                              <td style='padding:0px 50px 0px 50px' >
+                                  <label for="{{ form.couponRelevanceLocationAddressTen.vars.id}}">Relevance Location</label><br>
+                                  {{ form_widget(form.couponRelevanceLocationAddressTen) }}
+                              </td>
+                              <td style='padding:0px 50px 0px 50px'>
+                                  <label for="{{ form.couponRelevanceLocationTextDynamicTen.vars.id}}">Relevance Text</label><br>
+                                  {{ form_widget(form.couponRelevanceLocationTextDynamicTen) }}
+                              </td>
+                          </tr>
+                      </table>
+                  </td>
+                  <td style=" vertical-align:top;" style='padding:5px 100px 5px 50px'>
+                      <center>
+                          <input type="submit" id="formsub" value="Update Pass" class="btn"/>
+                      </center>
+                  </td>
+              </tr>
+          </table>
+
+      </form>
+
+{% endblock %}

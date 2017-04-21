@@ -1,0 +1,2857 @@
+{% extends '::base.html.twig' %}
+{% block javascripts %}
+    <script src="{{ asset('bundles/apbappass/js/service.js') }}"></script>
+{% endblock %}
+{% block title %}mcoupon Form{% endblock %}
+{% block body %}
+
+    <div class="content" style="margin-top: 60px;" xmlns="http://www.w3.org/1999/html"
+         xmlns="http://www.w3.org/1999/html">
+
+      <form id="myform" action="" method="POST" accept="image/png"
+            {{ form_enctype(form1) }}
+            {{ form_enctype(form2) }}
+            {{ form_enctype(form3) }}
+            {{ form_enctype(form4) }}
+            {{ form_enctype(form5) }}
+            {{ form_enctype(form6) }}
+            {{ form_enctype(form7) }}
+            {{ form_enctype(form8) }}
+            {{ form_enctype(form9) }}
+            {{ form_enctype(form10) }}>
+        <table>
+            <tr>
+                <td>
+                    <div id="tabs">
+
+                        <ul>
+                    <li><a href="#tabs-1">General</a></li>
+                    <li><a href="#tabs-2">Appearance</a></li>
+                    <li><a href="#tabs-3">Data Settings</a></li>
+                    <li><a href="#tabs-4">Header</a></li>
+                    <li><a href="#tabs-5">Primary</a></li>
+                    <li><a href="#tabs-6">Secondary</a></li>
+                    <li><a href="#tabs-7">Auxiliary</a></li>
+                    <li><a href="#tabs-8">Back Fields</a></li>
+                    <li><a href="#tabs-9">Relevance</a></li>
+                    <li><a href="#tabs-10">Distribution</a></li>
+                </ul>
+                        <div id="tabs-1" class="ui-tabs-panel">
+
+                    <table>
+                        <tr>
+                            <td colspan="2">
+                                <br><br><h4> Pass Metadata</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form1.templateName.vars.id}}">Name*</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form1.templateName) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form1.passKey.vars.id}}">PassKey*</label>
+                            </td>
+                            <td>
+                                <b>{{ form1.passKey.vars.value }}</b>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form1.categoryName.vars.id}}">Category*</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form1.categoryName ) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form1.places.vars.id}}">Places*</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form1.places ) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form1.boardingPassTransit.vars.id}}">Transit*</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form1.boardingPassTransit) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form1.organizationName.vars.id}}">Organization*</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form1.organizationName) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form1.organizationDescription.vars.id}}">Description*</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form1.organizationDescription) }}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                        <div id="tabs-2" class="ui-tabs-panel">
+                    <table>
+                        <tr>
+                            <td colspan="2">
+                                <br><br>
+                                <h4> Image and Text</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form2.iconName.vars.id}}">Icon</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form2.iconNameFile, { 'attr': {'accept': 'image/png'} }) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form2.logoName.vars.id}}">Logo</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form2.logoNameFile, { 'attr': {'accept': 'image/png'} }) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form2.logoText.vars.id}}">Logo Text</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form2.logoText ) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form2.genericThumbnail.vars.id}}">Thumbnail</label>
+                            </td>
+                            <td>
+                                <table id="image0">
+                                    <tr>
+                                        <td>
+                                            {{ form_widget(form2.genericThumbnailFile, { 'attr': {'accept': 'image/png'} }) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form2.boardingPassFooter.vars.id}}">Footer</label>
+                            </td>
+                            <td>
+                                <table id="image1">
+                                    <tr>
+                                        <td>
+                                            {{ form_widget(form2.boardingPassFooterFile, { 'attr': {'accept': 'image/png'} }) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form2.couponStrip.vars.id}}">Strip</label>
+                            </td>
+                            <td>
+                                <table id="image2">
+                                    <tr>
+                                        <td>
+                                            {{ form_widget(form2.couponStripFile, { 'attr': {'accept': 'image/png'} }) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form2.storeCardStrip.vars.id}}">Strip</label>
+                            </td>
+                            <td>
+                                <table id="image3">
+                                    <tr>
+                                        <td>
+                                            {{ form_widget(form2.storeCardStripFile, { 'attr': {'accept': 'image/png'} }) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                                </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                {{ form_widget(form2.eventTicketStatus) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form2.eventTicketStrip.vars.id}}">Strip</label>
+                            </td>
+                            <td>
+                                <table id="image4">
+                                    <tr>
+                                        <td>
+                                            {{ form_widget(form2.eventTicketStripFile , { 'attr': {'accept': 'image/png'} }) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr><td>
+                                <label for="{{ form2.eventTicketThumbnail.vars.id}}">Thumbnail</label>
+                            </td>
+                            <td>
+                                <table id="image5">
+                                    <tr>
+                                        <td>
+                                            {{ form_widget(form2.eventTicketThumbnailFile , { 'attr': {'accept': 'image/png'} }) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form2.eventTicketBackground.vars.id}}">Background</label>
+                            </td>
+                            <td>
+                                <table id="image6">
+                                    <tr>
+                                        <td>
+                                            {{ form_widget(form2.eventTicketBackgroundFile, { 'attr': {'accept': 'image/png'} }) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <h4> Color</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form2.backgroundColorCode.vars.id}}">Background*</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form2.backgroundColorCode) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form2.fieldLabelColorCode.vars.id}}">Field Label*</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form2.fieldLabelColorCode) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form2.fieldValueColorCode.vars.id}}">Field Value*</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form2.fieldValueColorCode) }}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                        <div id="tabs-3" class="ui-tabs-panel">
+                    <table>
+                        <tr>
+                            <td colspan="2">
+                                <br><br><h4> Pass Data </br>Barcode Data</h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form3.couponBarcodeStatus.vars.id}}">Add Barcode*</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form3.couponBarcodeStatus) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="br">
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form3.couponBarcodeType.vars.id}}">Barcode Type*</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form3.couponBarcodeType) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form3.couponBarcodeValueOption.vars.id}}">Barcode Value*</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form3.couponBarcodeValueOption ) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form3.couponBarcodeFixedValue.vars.id}}">Fixed Value*</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form3.couponBarcodeFixedValue) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form3.couponBarcodeValueSource.vars.id}}">Barcode Value Source*</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form3.couponBarcodeValueSource) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form3.couponAutoGenerateValueType.vars.id}}">Auto Generate Value*</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form3.couponAutoGenerateValueType) }}
+                                            {{ form_widget(form3.couponAutoGenerateValueLength) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form3.couponBarcodeDynamicValue.vars.id}}">Dynamic Value*</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form3.couponBarcodeDynamicValue) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form3.couponBarcodeEncoding.vars.id}}">Barcode Encoding*</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form3.couponBarcodeEncoding) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form3.barcodeAlternateText.vars.id}}">Alternate Text*</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form3.barcodeAlternateText) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form3.barcodeAlternateFixedText.vars.id}}">Fixed Text*</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form3.barcodeAlternateFixedText) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form3.barcodeAlternateDynamicText.vars.id}}">Dynamic Text*</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form3.barcodeAlternateDynamicText) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                        <div id="tabs-4" class="ui-tabs-panel">
+                    <table>
+                        <tr>
+                            <td colspan="2">
+                                <br><br><h4> Header Fields </h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form4.couponHeaderLabel.vars.id}}">Label</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form4.couponHeaderLabel) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form4.couponHeaderLabelDynamicStatus.vars.id}}">Dynamic</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form4.couponHeaderLabelDynamicStatus) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form4.couponHeaderValueType.vars.id}}">Type</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form4.couponHeaderValueType ) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="header1">
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form4.couponHeaderTextValue.vars.id}}">Value (Text)</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form4.couponHeaderTextValue) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form4.couponHeaderTextDynamicStatus.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form4.couponHeaderTextDynamicStatus) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="header2">
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form4.couponHeaderValueDate.vars.id}}">Value (Date and Time)</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form4.couponHeaderValueDate) }}
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form4.couponHeaderValueTime) }}
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form4.couponHeaderValueTimezone) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form4.couponHeaderValueDateFormate.vars.id}}">Date Format</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form4.couponHeaderValueDateFormate) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form4.couponHeaderValueTimeFormate.vars.id}}">Time Format</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form4.couponHeaderValueTimeFormate) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="header3">
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form4.couponHeaderNumberValue.vars.id}}">Value (Number)</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form4.couponHeaderNumberValue) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form4.couponHeaderNumberFormate.vars.id}}">Number Format</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form4.couponHeaderNumberFormate) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="header4">
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form4.couponHeaderCurrencyValue.vars.id}}">Value (Currency)</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form4.couponHeaderCurrencyValue) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form4.couponHeaderCurrencyCode.vars.id}}">Currency Code</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form4.couponHeaderCurrencyCode) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form4.couponHeaderAlignmnet.vars.id}}">Alignment</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form4.couponHeaderAlignmnet) }}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                        <div id="tabs-5" class="ui-tabs-panel">
+                    <table>
+                        <tr>
+                            <td colspan="2">
+                                <br><br>
+                                <h4> Primary Fields </h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form5.couponPrimaryFieldLabel.vars.id}}">Label</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form5.couponPrimaryFieldLabel) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form5.couponPrimaryFieldLabelDynamicStatus.vars.id}}">Dynamic</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form5.couponPrimaryFieldLabelDynamicStatus) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form5.couponPrimaryFieldValueType.vars.id}}">Type</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form5.couponPrimaryFieldValueType ) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="primary1">
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form5.couponPrimaryFieldTextValue.vars.id}}">Value (Text)</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form5.couponPrimaryFieldTextValue) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form5.couponPrimaryFieldTextDynamicStatus.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form5.couponPrimaryFieldTextDynamicStatus) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="primary2">
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form5.couponPrimaryFieldValueDate.vars.id}}">Value (Date and Time)</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form5.couponPrimaryFieldValueDate) }}
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form5.couponPrimaryFieldValueTime) }}
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form5.couponPrimaryFieldValueTimezone) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form5.couponPrimaryFieldValueDateFormate.vars.id}}">Date Format</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form5.couponPrimaryFieldValueDateFormate) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form5.couponPrimaryFieldValueTimeFormate.vars.id}}">Time Format</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form5.couponPrimaryFieldValueTimeFormate) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="primary3">
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form5.couponPrimaryFieldNumberValue.vars.id}}">Value (Number)</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form5.couponPrimaryFieldNumberValue) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form5.couponPrimaryFieldNumberFormate.vars.id}}">Number Format</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form5.couponPrimaryFieldNumberFormate) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="primary4">
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form5.couponPrimaryFieldCurrencyValue.vars.id}}">Value (Currency)</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form5.couponPrimaryFieldCurrencyValue) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form5.couponPrimaryFieldCurrencyCode.vars.id}}">Currency Code</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form5.couponPrimaryFieldCurrencyCode) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                        <div id="tabs-6" class="ui-tabs-panel">
+                    <table id="sf">
+                        <tr>
+                            <td colspan="2">
+                                <br><br>
+                                <h4> Secondary Fields </h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form6.couponSecondaryFieldTotalFields.vars.id}}">Total Secondary Fields</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form6.couponSecondaryFieldTotalFields) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="sf1">
+                                    <tr>
+                                        <td colspan="2">
+                                            <h4> Secondary Field 1 of 4 </h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form6.couponSecondaryFieldLabelOne.vars.id}}">Label</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form6.couponSecondaryFieldLabelOne) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form6.couponSecondaryFieldLabelDynamicStatusOne.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form6.couponSecondaryFieldLabelDynamicStatusOne) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form6.couponSecondaryFieldValueTypeOne.vars.id}}">Type</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form6.couponSecondaryFieldValueTypeOne ) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <table id="sf11">
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form6.couponSecondaryFieldTextValueOne.vars.id}}">Value (Text)</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldTextValueOne) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form6.couponSecondaryFieldTextDynamicStatusOne.vars.id}}">Dynamic</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldTextDynamicStatusOne) }}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <table id="sf12">
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form6.couponSecondaryFieldValueDateOne.vars.id}}">Value (Date and Time)</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldValueDateOne) }}
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldValueTimeOne) }}
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldValueTimezoneOne) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form6.couponSecondaryFieldValueDateFormateOne.vars.id}}">Date Format</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldValueDateFormateOne) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form6.couponSecondaryFieldValueTimeFormateOne.vars.id}}">Time Format</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldValueTimeFormateOne) }}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <table id="sf13">
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form6.couponSecondaryFieldNumberValueOne.vars.id}}">Value (Number)</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldNumberValueOne) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form6.couponSecondaryFieldNumberFormateOne.vars.id}}">Number Format</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldNumberFormateOne) }}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <table id="sf14">
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form6.couponSecondaryFieldCurrencyValueOne.vars.id}}">Value (Currency)</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldCurrencyValueOne) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form6.couponSecondaryFieldCurrencyCodeOne.vars.id}}">Currency Code</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldCurrencyCodeOne) }}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form6.couponSecondaryFieldAlignmnetOne.vars.id}}">Alignment</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form6.couponSecondaryFieldAlignmnetOne) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="sf2">
+                                    <tr>
+                                        <td colspan="2">
+                                            <h4> Secondary Field 2 of 4 </h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form6.couponSecondaryFieldLabelTwo.vars.id}}">Label</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form6.couponSecondaryFieldLabelTwo) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form6.couponSecondaryFieldLabelDynamicStatusTwo.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form6.couponSecondaryFieldLabelDynamicStatusTwo) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form6.couponSecondaryFieldValueTypeTwo.vars.id}}">Type</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form6.couponSecondaryFieldValueTypeTwo ) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <table id="sf21">
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form6.couponSecondaryFieldTextValueTwo.vars.id}}">Value (Text)</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldTextValueTwo) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form6.couponSecondaryFieldTextDynamicStatusTwo.vars.id}}">Dynamic</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldTextDynamicStatusTwo) }}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <table id="sf22">
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form6.couponSecondaryFieldValueDateTwo.vars.id}}">Value (Date and Time)</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldValueDateTwo) }}
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldValueTimeTwo) }}
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldValueTimezoneTwo) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form6.couponSecondaryFieldValueDateFormateTwo.vars.id}}">Date Format</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldValueDateFormateTwo) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form6.couponSecondaryFieldValueTimeFormateTwo.vars.id}}">Time Format</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldValueTimeFormateTwo) }}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <table id="sf23">
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form6.couponSecondaryFieldNumberValueTwo.vars.id}}">Value (Number)</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldNumberValueTwo) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form6.couponSecondaryFieldNumberFormateTwo.vars.id}}">Number Format</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldNumberFormateTwo) }}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <table id="sf24">
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form6.couponSecondaryFieldCurrencyValueTwo.vars.id}}">Value (Currency)</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldCurrencyValueTwo) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form6.couponSecondaryFieldCurrencyCodeTwo.vars.id}}">Currency Code</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldCurrencyCodeTwo) }}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form6.couponSecondaryFieldAlignmnetTwo.vars.id}}">Alignment</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form6.couponSecondaryFieldAlignmnetTwo) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="sf3">
+                                    <tr>
+                                        <td colspan="2">
+                                            <h4> Secondary Field 3 of 4 </h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form6.couponSecondaryFieldLabelThree.vars.id}}">Label</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form6.couponSecondaryFieldLabelThree) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form6.couponSecondaryFieldLabelDynamicStatusThree.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form6.couponSecondaryFieldLabelDynamicStatusThree) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form6.couponSecondaryFieldValueTypeThree.vars.id}}">Type</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form6.couponSecondaryFieldValueTypeThree ) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <table id="sf31">
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form6.couponSecondaryFieldTextValueThree.vars.id}}">Value (Text)</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldTextValueThree) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form6.couponSecondaryFieldTextDynamicStatusThree.vars.id}}">Dynamic</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldTextDynamicStatusThree) }}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <table id="sf32">
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form6.couponSecondaryFieldValueDateThree.vars.id}}">Value (Date and Time)</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldValueDateThree) }}
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldValueTimeThree) }}
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldValueTimezoneThree) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form6.couponSecondaryFieldValueDateFormateThree.vars.id}}">Date Format</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldValueDateFormateThree) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form6.couponSecondaryFieldValueTimeFormateThree.vars.id}}">Time Format</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldValueTimeFormateThree) }}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <table id="sf33">
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form6.couponSecondaryFieldNumberValueThree.vars.id}}">Value (Number)</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldNumberValueThree) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form6.couponSecondaryFieldNumberFormateThree.vars.id}}">Number Format</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldNumberFormateThree) }}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <table id="sf34">
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form6.couponSecondaryFieldCurrencyValueThree.vars.id}}">Value (Currency)</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldCurrencyValueThree) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form6.couponSecondaryFieldCurrencyCodeThree.vars.id}}">Currency Code</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldCurrencyCodeThree) }}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form6.couponSecondaryFieldAlignmnetThree.vars.id}}">Alignment</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form6.couponSecondaryFieldAlignmnetThree) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="sf4">
+                                    <tr>
+                                        <td colspan="2">
+                                            <h4> Secondary Field 4 of 4 </h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form6.couponSecondaryFieldLabelFour.vars.id}}">Label</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form6.couponSecondaryFieldLabelFour) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form6.couponSecondaryFieldLabelDynamicStatusFour.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form6.couponSecondaryFieldLabelDynamicStatusFour) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form6.couponSecondaryFieldValueTypeFour.vars.id}}">Type</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form6.couponSecondaryFieldValueTypeFour ) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <table id="sf41">
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form6.couponSecondaryFieldTextValueFour.vars.id}}">Value (Text)</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldTextValueFour) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form6.couponSecondaryFieldTextDynamicStatusFour.vars.id}}">Dynamic</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldTextDynamicStatusFour) }}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <table id="sf42">
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form6.couponSecondaryFieldValueDateFour.vars.id}}">Value (Date and Time)</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldValueDateFour) }}
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldValueTimeFour) }}
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldValueTimezoneFour) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form6.couponSecondaryFieldValueDateFormateFour.vars.id}}">Date Format</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldValueDateFormateFour) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form6.couponSecondaryFieldValueTimeFormateFour.vars.id}}">Time Format</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldValueTimeFormateFour) }}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <table id="sf43">
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form6.couponSecondaryFieldNumberValueFour.vars.id}}">Value (Number)</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldNumberValueFour) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form6.couponSecondaryFieldNumberFormateFour.vars.id}}">Number Format</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldNumberFormateFour) }}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <table id="sf44">
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form6.couponSecondaryFieldCurrencyValueFour.vars.id}}">Value (Currency)</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldCurrencyValueFour) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form6.couponSecondaryFieldCurrencyCodeFour.vars.id}}">Currency Code</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form6.couponSecondaryFieldCurrencyCodeFour) }}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form6.couponSecondaryFieldAlignmnetFour.vars.id}}">Alignment</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form6.couponSecondaryFieldAlignmnetFour) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                        <div id="tabs-7" class="ui-tabs-panel">
+                    <table id="haf">
+                        <tr>
+                            <br><br>
+                            <td colspan="2">
+                                <h4> Auxiliary Fields </h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">NOTE: Auxiliary fields are not supported in this case.</br>
+                'Generic' Pass with 'Aztec/QR Barcode' do not support Auxiliary Fields.
+                            </td>
+                        </tr>
+                    </table>
+                    <table id="af">
+                        <tr>
+                            <td colspan="2">
+                                <h4> Auxiliary Fields </h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form7.couponAuxiliaryFieldTotalFields.vars.id}}">Total Auxiliary Fields</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form7.couponAuxiliaryFieldTotalFields) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="af1">
+                                    <tr>
+                                        <td colspan="2">
+                                            <h4> Auxiliary Field 1 of 4 </h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form7.couponAuxiliaryFieldLabelOne.vars.id}}">Label</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form7.couponAuxiliaryFieldLabelOne) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form7.couponAuxiliaryFieldLabelDynamicStatusOne.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form7.couponAuxiliaryFieldLabelDynamicStatusOne) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form7.couponAuxiliaryFieldValueTypeOne.vars.id}}">Type</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form7.couponAuxiliaryFieldValueTypeOne ) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <table id="af11">
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form7.couponAuxiliaryFieldTextValueOne.vars.id}}">Value (Text)</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldTextValueOne) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form7.couponAuxiliaryFieldTextDynamicStatusOne.vars.id}}">Dynamic</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldTextDynamicStatusOne) }}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <table id="af12">
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form7.couponAuxiliaryFieldValueDateOne.vars.id}}">Value (Date and Time)</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldValueDateOne) }}
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldValueTimeOne) }}
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldValueTimezoneOne) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form7.couponAuxiliaryFieldValueDateFormateOne.vars.id}}">Date Format</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldValueDateFormateOne) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form7.couponAuxiliaryFieldValueTimeFormateOne.vars.id}}">Time Format</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldValueTimeFormateOne) }}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <table id="af13">
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form7.couponAuxiliaryFieldNumberValueOne.vars.id}}">Value (Number)</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldNumberValueOne) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form7.couponAuxiliaryFieldNumberFormateOne.vars.id}}">Number Format</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldNumberFormateOne) }}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <table id="af14">
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form7.couponAuxiliaryFieldCurrencyValueOne.vars.id}}">Value (Currency)</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldCurrencyValueOne) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form7.couponAuxiliaryFieldCurrencyCodeOne.vars.id}}">Currency Code</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldCurrencyCodeOne) }}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form7.couponAuxiliaryFieldAlignmnetOne.vars.id}}">Alignment</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form7.couponAuxiliaryFieldAlignmnetOne) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="af2">
+                                    <tr>
+                                        <td colspan="2">
+                                            <h4> Auxiliary Field 2 of 4 </h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form7.couponAuxiliaryFieldLabelTwo.vars.id}}">Label</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form7.couponAuxiliaryFieldLabelTwo) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form7.couponAuxiliaryFieldLabelDynamicStatusTwo.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form7.couponAuxiliaryFieldLabelDynamicStatusTwo) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form7.couponAuxiliaryFieldValueTypeTwo.vars.id}}">Type</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form7.couponAuxiliaryFieldValueTypeTwo ) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <table id="af21">
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form7.couponAuxiliaryFieldTextValueTwo.vars.id}}">Value (Text)</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldTextValueTwo) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form7.couponAuxiliaryFieldTextDynamicStatusTwo.vars.id}}">Dynamic</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldTextDynamicStatusTwo) }}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <table id="af22">
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form7.couponAuxiliaryFieldValueDateTwo.vars.id}}">Value (Date and Time)</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldValueDateTwo) }}
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldValueTimeTwo) }}
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldValueTimezoneTwo) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form7.couponAuxiliaryFieldValueDateFormateTwo.vars.id}}">Date Format</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldValueDateFormateTwo) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form7.couponAuxiliaryFieldValueTimeFormateTwo.vars.id}}">Time Format</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldValueTimeFormateTwo) }}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <table id="af23">
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form7.couponAuxiliaryFieldNumberValueTwo.vars.id}}">Value (Number)</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldNumberValueTwo) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form7.couponAuxiliaryFieldNumberFormateTwo.vars.id}}">Number Format</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldNumberFormateTwo) }}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <table id="af24">
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form7.couponAuxiliaryFieldCurrencyValueTwo.vars.id}}">Value (Currency)</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldCurrencyValueTwo) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form7.couponAuxiliaryFieldCurrencyCodeTwo.vars.id}}">Currency Code</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldCurrencyCodeTwo) }}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form7.couponAuxiliaryFieldAlignmnetTwo.vars.id}}">Alignment</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form7.couponAuxiliaryFieldAlignmnetTwo) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="af3">
+                                    <tr>
+                                        <td colspan="2">
+                                            <h4> Auxiliary Field 3 of 4 </h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form7.couponAuxiliaryFieldLabelThree.vars.id}}">Label</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form7.couponAuxiliaryFieldLabelThree) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form7.couponAuxiliaryFieldLabelDynamicStatusThree.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form7.couponAuxiliaryFieldLabelDynamicStatusThree) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form7.couponAuxiliaryFieldValueTypeThree.vars.id}}">Type</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form7.couponAuxiliaryFieldValueTypeThree ) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <table id="af31">
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form7.couponAuxiliaryFieldTextValueThree.vars.id}}">Value (Text)</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldTextValueThree) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form7.couponAuxiliaryFieldTextDynamicStatusThree.vars.id}}">Dynamic</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldTextDynamicStatusThree) }}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <table id="af32">
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form7.couponAuxiliaryFieldValueDateThree.vars.id}}">Value (Date and Time)</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldValueDateThree) }}
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldValueTimeThree) }}
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldValueTimezoneThree) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form7.couponAuxiliaryFieldValueDateFormateThree.vars.id}}">Date Format</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldValueDateFormateThree) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form7.couponAuxiliaryFieldValueTimeFormateThree.vars.id}}">Time Format</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldValueTimeFormateThree) }}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <table id="af33">
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form7.couponAuxiliaryFieldNumberValueThree.vars.id}}">Value (Number)</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldNumberValueThree) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form7.couponAuxiliaryFieldNumberFormateThree.vars.id}}">Number Format</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldNumberFormateThree) }}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <table id="af34">
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form7.couponAuxiliaryFieldCurrencyValueThree.vars.id}}">Value (Currency)</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldCurrencyValueThree) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form7.couponAuxiliaryFieldCurrencyCodeThree.vars.id}}">Currency Code</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldCurrencyCodeThree) }}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form7.couponAuxiliaryFieldAlignmnetThree.vars.id}}">Alignment</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form7.couponAuxiliaryFieldAlignmnetThree) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="af4">
+                                    <tr>
+                                        <td colspan="2">
+                                            <h4> Auxiliary Field 4 of 4 </h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form7.couponAuxiliaryFieldLabelFour.vars.id}}">Label</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form7.couponAuxiliaryFieldLabelFour) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form7.couponAuxiliaryFieldLabelDynamicStatusFour.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form7.couponAuxiliaryFieldLabelDynamicStatusFour) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form7.couponAuxiliaryFieldValueTypeFour.vars.id}}">Type</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form7.couponAuxiliaryFieldValueTypeFour ) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <table id="af41">
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form7.couponAuxiliaryFieldTextValueFour.vars.id}}">Value (Text)</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldTextValueFour) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form7.couponAuxiliaryFieldTextDynamicStatusFour.vars.id}}">Dynamic</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldTextDynamicStatusFour) }}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <table id="af42">
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form7.couponAuxiliaryFieldValueDateFour.vars.id}}">Value (Date and Time)</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldValueDateFour) }}
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldValueTimeFour) }}
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldValueTimezoneFour) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form7.couponAuxiliaryFieldValueDateFormateFour.vars.id}}">Date Format</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldValueDateFormateFour) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form7.couponAuxiliaryFieldValueTimeFormateFour.vars.id}}">Time Format</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldValueTimeFormateFour) }}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <table id="af43">
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form7.couponAuxiliaryFieldNumberValueFour.vars.id}}">Value (Number)</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldNumberValueFour) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form7.couponAuxiliaryFieldNumberFormateFour.vars.id}}">Number Format</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldNumberFormateFour) }}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2">
+                                            <table id="af44">
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form7.couponAuxiliaryFieldCurrencyValueFour.vars.id}}">Value (Currency)</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldCurrencyValueFour) }}
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <label for="{{ form7.couponAuxiliaryFieldCurrencyCodeFour.vars.id}}">Currency Code</label>
+                                                    </td>
+                                                    <td>
+                                                        {{ form_widget(form7.couponAuxiliaryFieldCurrencyCodeFour) }}
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form7.couponAuxiliaryFieldAlignmnetFour.vars.id}}">Alignment</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form7.couponAuxiliaryFieldAlignmnetFour) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                        <div id="tabs-8" class="ui-tabs-panel">
+                    <table id="bf">
+                        <tr>
+                            <td colspan="2">
+                                <br><br>
+                                <h4> Back Fields </h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form8.couponBackFieldTotalFields.vars.id}}">Total Back Fields</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form8.couponBackFieldTotalFields) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="bf1">
+                                    <tr>
+                                        <td colspan="2">
+                                            <h4> Back Fields 1 of 10 </h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldLabelOne.vars.id}}">Label</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldLabelOne) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldLabelDynamicStatusOne.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldLabelDynamicStatusOne) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldTextValueOne.vars.id}}">Value</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldTextValueOne) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldTextDynamicStatusOne.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldTextDynamicStatusOne) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="bf2">
+                                    <tr>
+                                        <td colspan="2">
+                                            <h4> Back Fields 2 of 10 </h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldLabelTwo.vars.id}}">Label</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldLabelTwo) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldLabelDynamicStatusTwo.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldLabelDynamicStatusTwo) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldTextValueTwo.vars.id}}">Value</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldTextValueTwo) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldTextDynamicStatusTwo.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldTextDynamicStatusTwo) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="bf3">
+                                    <tr>
+                                        <td colspan="2">
+                                            <h4> Back Fields 3 of 10 </h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldLabelThree.vars.id}}">Label</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldLabelThree) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldLabelDynamicStatusThree.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldLabelDynamicStatusThree) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldTextValueThree.vars.id}}">Value</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldTextValueThree) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldTextDynamicStatusThree.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldTextDynamicStatusThree) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="bf4">
+                                    <tr>
+                                        <td colspan="2">
+                                            <h4> Back Fields 4 of 10 </h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldLabelFour.vars.id}}">Label</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldLabelFour) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldLabelDynamicStatusFour.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldLabelDynamicStatusFour) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldTextValueFour.vars.id}}">Value</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldTextValueFour) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldTextDynamicStatusFour.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldTextDynamicStatusFour) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="bf5">
+                                    <tr>
+                                        <td colspan="2">
+                                            <h4> Back Fields 5 of 10 </h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldLabelFive.vars.id}}">Label</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldLabelFive) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldLabelDynamicStatusFive.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldLabelDynamicStatusFive) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldTextValueFive.vars.id}}">Value</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldTextValueFive) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldTextDynamicStatusFive.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldTextDynamicStatusFive) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="bf6">
+                                    <tr>
+                                        <td colspan="2">
+                                            <h4> Back Fields 6 of 10 </h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldLabelSix.vars.id}}">Label</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldLabelSix) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldLabelDynamicStatusSix.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldLabelDynamicStatusSix) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldTextValueSix.vars.id}}">Value</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldTextValueSix) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldTextDynamicStatusSix.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldTextDynamicStatusSix) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="bf7">
+                                    <tr>
+                                        <td colspan="2">
+                                            <h4> Back Fields 7 of 10 </h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldLabelSeven.vars.id}}">Label</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldLabelSeven) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldLabelDynamicStatusSeven.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldLabelDynamicStatusSeven) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldTextValueSeven.vars.id}}">Value</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldTextValueSeven) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldTextDynamicStatusSeven.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldTextDynamicStatusSeven) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="bf8">
+                                    <tr>
+                                        <td colspan="2">
+                                            <h4> Back Fields 8 of 10 </h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldLabelEight.vars.id}}">Label</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldLabelEight) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldLabelDynamicStatusEight.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldLabelDynamicStatusEight) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldTextValueEight.vars.id}}">Value</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldTextValueEight) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldTextDynamicStatusEight.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldTextDynamicStatusEight) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="bf9">
+                                    <tr>
+                                        <td colspan="2">
+                                            <h4> Back Fields 9 of 10 </h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldLabelNine.vars.id}}">Label</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldLabelNine) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldLabelDynamicStatusNine.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldLabelDynamicStatusNine) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldTextValueNine.vars.id}}">Value</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldTextValueNine) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldTextDynamicStatusNine.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldTextDynamicStatusNine) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="bf10">
+                                    <tr>
+                                        <td colspan="2">
+                                            <h4> Back Fields 10 of 10 </h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldLabelTen.vars.id}}">Label</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldLabelTen) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldLabelDynamicStatusTen.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldLabelDynamicStatusTen) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldTextValueTen.vars.id}}">Value</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldTextValueTen) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form8.couponBackFieldTextDynamicStatusTen.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form8.couponBackFieldTextDynamicStatusTen) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                        <div id="tabs-9" class="ui-tabs-panel">
+                    <table id="rl">
+                        <tr>
+                            <td colspan="2">
+                                <br><br>
+                                <h4> Relevancy Information </h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form9.couponRelevanceLocationTotalFields.vars.id}}">Total Relevant Locations</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form9.couponRelevanceLocationTotalFields) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="rl1">
+                                    <tr>
+                                        <td colspan="2">
+                                            <h4> Relevance - Location Info ( 1 of 10 ) </h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form9.couponRelevanceLocationAddressOne.vars.id}}">Relevant Address</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form9.couponRelevanceLocationAddressOne) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form9.couponRelevanceLocationTextOne.vars.id}}">Relevant Text</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form9.couponRelevanceLocationTextOne) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form9.couponRelevanceLocationTextDynamicStatusOne.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form9.couponRelevanceLocationTextDynamicStatusOne) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="rl2">
+                                    <tr>
+                                        <td colspan="2">
+                                            <h4> Relevance - Location Info ( 2 of 10 ) </h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form9.couponRelevanceLocationAddressTwo.vars.id}}">Relevant Address</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form9.couponRelevanceLocationAddressTwo) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form9.couponRelevanceLocationTextTwo.vars.id}}">Relevant Text</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form9.couponRelevanceLocationTextTwo) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form9.couponRelevanceLocationTextDynamicStatusTwo.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form9.couponRelevanceLocationTextDynamicStatusTwo) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="rl3">
+                                    <tr>
+                                        <td colspan="2">
+                                            <h4> Relevance - Location Info ( 3 of 10 ) </h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form9.couponRelevanceLocationTextThree.vars.id}}">Relevant Address</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form9.couponRelevanceLocationAddressThree) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form9.couponRelevanceLocationTextThree.vars.id}}">Relevant Text</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form9.couponRelevanceLocationTextThree) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form9.couponRelevanceLocationTextDynamicStatusThree.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form9.couponRelevanceLocationTextDynamicStatusThree) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="rl4">
+                                    <tr>
+                                        <td colspan="2">
+                                            <h4> Relevance - Location Info ( 4 of 10 ) </h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form9.couponRelevanceLocationAddressFour.vars.id}}">Relevant Address</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form9.couponRelevanceLocationAddressFour) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form9.couponRelevanceLocationTextFour.vars.id}}">Relevant Text</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form9.couponRelevanceLocationTextFour) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form9.couponRelevanceLocationTextDynamicStatusFour.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form9.couponRelevanceLocationTextDynamicStatusFour) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="rl5">
+                                    <tr>
+                                        <td colspan="2">
+                                            <h4> Relevance - Location Info ( 5 of 10 ) </h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form9.couponRelevanceLocationAddressFive.vars.id}}">Relevant Address</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form9.couponRelevanceLocationAddressFive) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form9.couponRelevanceLocationTextFive.vars.id}}">Relevant Text</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form9.couponRelevanceLocationTextFive) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form9.couponRelevanceLocationTextDynamicStatusFive.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form9.couponRelevanceLocationTextDynamicStatusFive) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="rl6">
+                                    <tr>
+                                        <td colspan="2">
+                                            <h4> Relevance - Location Info ( 6 of 10 ) </h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form9.couponRelevanceLocationAddressSix.vars.id}}">Relevant Address</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form9.couponRelevanceLocationAddressSix) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form9.couponRelevanceLocationTextSix.vars.id}}">Relevant Text</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form9.couponRelevanceLocationTextSix) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form9.couponRelevanceLocationTextDynamicStatusSix.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form9.couponRelevanceLocationTextDynamicStatusSix) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="rl7">
+                                    <tr>
+                                        <td colspan="2">
+                                            <h4> Relevance - Location Info ( 7 of 10 ) </h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form9.couponRelevanceLocationAddressSeven.vars.id}}">Relevant Address</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form9.couponRelevanceLocationAddressSeven) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form9.couponRelevanceLocationTextSeven.vars.id}}">Relevant Text</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form9.couponRelevanceLocationTextSeven) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form9.couponRelevanceLocationTextDynamicStatusSeven.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form9.couponRelevanceLocationTextDynamicStatusSeven) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="rl8">
+                                    <tr>
+                                        <td colspan="2">
+                                            <h4> Relevance - Location Info ( 8 of 10 ) </h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form9.couponRelevanceLocationAddressEight.vars.id}}">Relevant Address</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form9.couponRelevanceLocationAddressEight) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form9.couponRelevanceLocationTextEight.vars.id}}">Relevant Text</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form9.couponRelevanceLocationTextEight) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form9.couponRelevanceLocationTextDynamicStatusEight.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form9.couponRelevanceLocationTextDynamicStatusEight) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="rl9">
+                                    <tr>
+                                        <td colspan="2">
+                                            <h4> Relevance - Location Info ( 9 of 10 ) </h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form9.couponRelevanceLocationAddressNine.vars.id}}">Relevant Address</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form9.couponRelevanceLocationAddressNine) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form9.couponRelevanceLocationTextNine.vars.id}}">Relevant Text</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form9.couponRelevanceLocationTextNine) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form9.couponRelevanceLocationTextDynamicStatusNine.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form9.couponRelevanceLocationTextDynamicStatusNine) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <table id="rl10">
+                                    <tr>
+                                        <td colspan="2">
+                                            <h4> Relevance - Location Info ( 10 of 10 ) </h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form9.couponRelevanceLocationAddressTen.vars.id}}">Relevant Address</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form9.couponRelevanceLocationAddressTen) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form9.couponRelevanceLocationTextTen.vars.id}}">Relevant Text</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form9.couponRelevanceLocationTextTen) }}
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <label for="{{ form9.couponRelevanceLocationTextDynamicStatusTen.vars.id}}">Dynamic</label>
+                                        </td>
+                                        <td>
+                                            {{ form_widget(form9.couponRelevanceLocationTextDynamicStatusTen) }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <h4> Relevance - Date & Time Info </h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form9.couponRelevanceLocationDate.vars.id}}">Relevant Date & Time</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form9.couponRelevanceLocationDate) }}
+                                {{ form_widget(form9.couponRelevanceLocationTime) }}
+                                {{ form_widget(form9.couponRelevanceLocationTimezone) }}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                        <div id="tabs-10" class="ui-tabs-panel">
+                    <table id="ads">
+                        <tr>
+                            <td colspan="2">
+                                <br><br>
+                                <h4> Distribution </h4>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form10.distributionStatus.vars.id}}">Publish*</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form10.distributionStatus) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form10.passLinkType.vars.id}}">Pass Link Type*</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form10.passLinkType) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form10.restrictMultiple.vars.id}}">Disallow Mulltiple Installs*</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form10.restrictMultiple) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form10.voidPasses.vars.id}}">Void Passes*</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form10.voidPasses) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form10.passExpirationDate.vars.id}}">Auto Expire Pass After*</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form10.passExpirationDate) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form10.quantityRestriction.vars.id}}">Quantity Restriction*</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form10.quantityRestriction) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form10.limitValue.vars.id}}">Stop issuing passes after*</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form10.limitValue) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form10.dateRestriction.vars.id}}">Date Restriction*</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form10.dateRestriction) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form10.restrictedDate.vars.id}}">Stop issuing passes after*</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form10.restrictedDate) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form10.passwordIssueStatus.vars.id}}">Need password to issue*</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form10.passwordIssueStatus) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form10.fixedIssuePassword.vars.id}}">Issue password*</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form10.fixedIssuePassword) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form10.singleUsePasswords.vars.id}}">Single-use passwords*</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form10.singleUsePasswords) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form10.passwordUpdateStatus.vars.id}}">Need password to update*</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form10.passwordUpdateStatus) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form10.fixedUpdatePassword.vars.id}}">Update password*</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form10.fixedUpdatePassword) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="{{ form10.socialSharing.vars.id}}">Social Sharing*</label>
+                            </td>
+                            <td>
+                                {{ form_widget(form10.socialSharing) }}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                    </div>
+                </td>
+                </td>
+                <td  style=" vertical-align:top;" >Email Pass On:<br>
+                    <input type="email" name="myemail"/></br>
+                    <center>
+                        <input type="submit" id="formsub" value="Save Pass Template" class="btn"/>
+                    </center>
+                </td>
+            </tr>
+        </table>
+
+      </form>
+    </div>
+
+
+
+
+    <script>
+        $(function(){
+            $('#apb_appassbundle_mappearance_iconNameFile').fileUpload({
+                showImage: true,
+                imgSrc : '{{ asset('bundles/apbappass/Images/mCouponsLogoIcon58x58.png') }}',
+            });
+            $('#apb_appassbundle_mappearance_logoNameFile').fileUpload({});
+            $('#apb_appassbundle_mappearance_couponStripFile').fileUpload({});
+            $('#apb_appassbundle_mappearance_genericThumbnailFile').fileUpload({});
+            $('#apb_appassbundle_mappearance_boardingPassFooterFile').fileUpload({});
+            $('#apb_appassbundle_mappearance_eventTicketStripFile').fileUpload({});
+            $('#apb_appassbundle_mappearance_eventTicketThumbnailFile').fileUpload({});
+            $('#apb_appassbundle_mappearance_eventTicketBackgroundFile').fileUpload({});
+            $('#apb_appassbundle_mappearance_storeCardStripFile').fileUpload({});
+        });
+    </script>
+
+{% endblock %}

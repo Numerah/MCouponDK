@@ -1,0 +1,4 @@
+#app/routing_rest.yml
+Rest_User : 
+  type : rest
+  resource: "@apbappassBundle/Resources/config/routing_rest.yml"

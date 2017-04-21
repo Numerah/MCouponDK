@@ -1,0 +1,42 @@
+{% extends '::base.html.twig' %}
+{% block title %}mcoupon Form{% endblock %}
+{% block javascripts %}
+{% endblock %}
+{% block body %}
+    <br>
+    <br>
+    <br>
+    <h2 style="color: #0086b1">&nbsp; Generated Passes</h2>
+    <table class="table table-striped table-bordered table-condensed">
+        <tr>
+            {# sorting of properties based on query components #}
+            <th style="color: #0086b1; text-align: center">Generated On</th>
+            <th style="color: #0086b1; text-align: center">Serial number</th>
+            <th style="color: #0086b1; text-align: center">Delivery Info</th>
+            <th style="color: #0086b1; text-align: center">#Requested</th>
+            <th style="color: #0086b1; text-align: center">Installed Devices</th>
+            <th style="color: #0086b1; text-align: center">Installed Info</th>
+            <th style="color: #0086b1; text-align: center">Update Passes</th>
+
+        </tr>
+
+        {# table body #}
+        {% for mgeneral in pagination %}
+            <tr {% if loop.index is odd %}class="color"{% endif %}>
+                <td style="text-align: center"></td>
+                <td></td>
+                <td style="text-align: center"></td>
+                <td style="text-align: center"></td>
+                <td style="text-align: center"></td>
+                <td style="text-align: center"></td>
+                <td style="text-align: center"><a type="button" class="btn" href="{{ path('apb_appass_manageupdate', {'id': mgeneral.couponId}) }}">Update Pass</a></td>
+            </tr>
+        {% endfor %}
+    </table>
+    {# display navigation #}
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,7 @@
+parameters:
+#    apbappass.example.class: apb\appassBundle\Example
+
+services:
+#    apbappass.example:
+#        class: %apbappass.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,65 @@
+{% extends '::base.html.twig' %}
+{% block title %}mcoupon Form{% endblock %}
+{% block javascripts %}
+{% endblock %}
+{% block body %}
+    <br>
+    <br>
+    <br>
+    <h2 style="color: #0086b1">&nbsp; Pass Templates</h2>
+    <div style="text-align: right;"><a href="{{ path('apb_appass_new') }}" type="button" class="btn"> Create Pass Template </a></div>
+    <form id="myform" action="" method="POST" >
+    <table class="table table-striped table-bordered table-condensed">
+        <tr>
+            {# sorting of properties based on query components #}
+            <th style="color: #0086b1">Template</th>
+            <th style="color: #0086b1">Size</th>
+            <th style="color: #0086b1">Preview</th>
+            <th style="color: #0086b1">Created</th>
+            <th style="color: #0086b1">Barcode</th>
+            <th style="color: #0086b1">Pass Data</th>
+            <th style="color: #0086b1">Publish</th>
+            <th style="color: #0086b1">Url Keys</th>
+            <th style="color: #0086b1">Edit</th>
+            <th style="color: #0086b1">Replicate</th>
+            <th style="color: #0086b1">[X]</th>
+
+        </tr>
+
+        {# table body #}
+        {% for mgeneral in pagination %}
+            <tr {% if loop.index is odd %}class="color"{% endif %}>
+                <td ><b>{{ mgeneral.Template }}</b><br>
+                    {{ mgeneral.Category }} (PID:{{ mgeneral.Id }})</td>
+                <td>{{ mgeneral.passSize }}</td>
+                <td></td>
+                <td>{{ mgeneral.Created|date('Y-m-d') }}</td>
+                <td>{{ mgeneral.Barcode }}</td>
+                <td></td>
+                <td>
+                    {% if mgeneral.Distribution == "1" %}
+                        <input type="checkbox" id="disstatus" name="disstatus[]" onchange="window.location.assign('{{ path('apb_appass_setstatus', {'ids': mgeneral.couponId , 'check': mgeneral.Distribution}) }}')" value="{{ mgeneral.Distribution }}" checked>
+                    {% else %}
+                        <input type="checkbox" id="disstatus" name="disstatus[]" onchange="window.location.assign('{{ path('apb_appass_setstatus', {'ids': mgeneral.couponId , 'check': 0}) }}')" value="{{ mgeneral.Distribution }}">
+                    {% endif %}</td>
+                <td></td>
+                <td><a type="button" class="btn" href="{{ path('apb_appass_edit', {'id': mgeneral.couponId}) }}">Edit</a></td>
+                <td><a type="button" class="btn" href="{{ path('apb_appass_replicate', {'id': mgeneral.couponId}) }}">Replicate</a></td>
+                <td><input type="checkbox" id="delid" name="del[]" value="{{ mgeneral.couponId }}"></td>
+            </tr>
+        {% endfor %}
+        <tr >
+            <td colspan="10">
+                <div style="text-align: right;"> <input type="submit" id="formsub" value="Delete" class="btn"/></div>
+            </td>
+
+        </tr>
+    </table>
+    </form>
+    {# display navigation #}
+    <div class="navigation">
+        {{ knp_pagination_render(pagination) }}
+    </div>
+
+
+{% endblock %}

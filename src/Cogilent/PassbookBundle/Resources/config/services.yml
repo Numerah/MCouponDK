@@ -1,0 +1,9 @@
+parameters:
+  cogilent.passbook.passhelper.class: Cogilent\PassbookBundle\Base\PassHelper
+
+services:
+
+  passbook.passhelper:
+    class: %cogilent.passbook.passhelper.class%
+    arguments:
+          - "@service_container"

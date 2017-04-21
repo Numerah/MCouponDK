@@ -1,0 +1,23 @@
+apb_welcome_homepage:
+    pattern:  /admin/
+    defaults: { _controller: apbWelcomeBundle:Default:index }
+ 
+apb_welcome_projects:
+    pattern:  /new/
+    defaults: { _controller: apbWelcomeBundle:Default:projects }
+ 
+apb_welcome_projects_add:
+    pattern:  /admin/projects/add
+    defaults: { _controller: apbWelcomeBundle:Default:addProject }
+ 
+apb_welcome_employees:
+    pattern:  /admin/employees
+    defaults: { _controller: apbWelcomeBundle:Default:employees }
+ 
+apb_welcome_employees_add:
+    pattern:  /admin/employees/add
+    defaults: { _controller: apbWelcomeBundle:Default:addEmployee }
+ 
+apb_welcome_profile:
+    pattern:  /admin/profile
+    defaults: { _controller: apbWelcomeBundle:Default:profile }

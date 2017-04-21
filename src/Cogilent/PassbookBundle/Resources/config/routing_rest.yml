@@ -1,0 +1,3 @@
+_cogilent_rest_api:
+    resource: Cogilent\PassbookBundle\Controller\ApiController
+    type: rest

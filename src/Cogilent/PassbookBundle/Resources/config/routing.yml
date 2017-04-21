@@ -1,0 +1,4 @@
+_cogilent_passbook_url:
+    resource: "@CogilentPassbookBundle/Controller"
+    type:     annotation
+
